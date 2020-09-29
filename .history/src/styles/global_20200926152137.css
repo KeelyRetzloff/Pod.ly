@@ -1,0 +1,60 @@
+/*general styles*/
+
+h1, h2, h3, h4, h5 {
+
+}
+
+a {
+    color: white;
+}
+
+header {
+
+}
+
+.home, .about, .shop, .contact, .shopsingle {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*header*/
+span.menuicon.fa-fw {
+    position: absolute;
+    left:0;
+    top: 0;
+}
+
+/*menu*/
+
+
+/*home*/
+
+
+.backgroundimage {
+    background-image: url(../images/indexbg.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backgroundoverlay {
+background-color: transparent linear-gradient(130deg, #0D2123 0%, #1B6470 100%) 0% 0% no-repeat padding-box;
+height: 100vh;
+
+}
+/*about*/
+
+
+/*shop*/
+.pods-container {
+
+}
+
+/*contact*/
+
+footer {
+    background: #1B6470;
+    margin: 20px 0;
+}
+
+/*media queries*/

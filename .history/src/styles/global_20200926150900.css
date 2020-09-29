@@ -1,0 +1,44 @@
+/*general styles*/
+
+h1, h2, h3, h4, h5 {
+
+}
+
+a {
+    color: white;
+}
+
+header {
+
+}
+
+.home, .about, .shop, .contact {
+    height: 100vh;
+    }
+
+/*home*/
+.home {
+height: 100vw;
+}
+
+.backgroundimage {
+    background-image: url(../images/indexbg.jpg);
+}
+
+.backgroundoverlay {
+background-color: 
+}
+/*about*/
+
+
+/*shop*/
+
+
+/*contact*/
+
+footer {
+    background: #1B6470;
+    margin: 20px 0;
+}
+
+/*media queries*/

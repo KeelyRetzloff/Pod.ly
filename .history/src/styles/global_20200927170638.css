@@ -1,0 +1,142 @@
+@import url("https://use.typekit.net/snz0vyw.css");
+
+/*general styles*/
+
+h1, h2, h3, h4, h5 {
+    font-family: blenny, sans-serif !important; 
+}
+
+a {
+    color: white;
+}
+
+p {
+    font-family: mr-eaves-xl-modern, sans-serif !important; 
+}
+
+body {
+    font-family: none;
+}
+
+
+.home, .about, .shop, .contact, .shopsingle {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*main button styles*/
+.mainbutton {
+    background: none;
+    color: white;
+    font-family: mr-eaves-xl-modern, sans-serif;
+    text-transform: uppercase;
+    border: none;
+}
+
+.mainbutton-wrapper {
+    border-radius: 20px;
+}
+
+/*scrollbar functionality*/
+html {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+/*header component*/
+header {
+    display: flex;
+    align-content: middle;
+}
+
+span.menuicon.fa-fw {
+    position: absolute;
+    right:0;
+    top: 0;
+    margin: 19px 2.5rem 0 0;
+    font-size: 1.4rem;
+}
+
+/*menu component*/
+.menuOverlay {
+    background: red;
+    z-index: 1000;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.overlay-menu {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.social-menu {
+    display: flex;
+
+    
+}
+
+.social-menu a {
+    color: #000;
+}
+
+/*home*/
+.home .menuicon.fa-fw{
+    border-color: #fff !important;
+}
+
+.home {
+    overflow: hidden;
+}
+
+.backgroundimage {
+    background-image: url(../images/indexbg.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backgroundoverlay {
+background: linear-gradient(130deg, #0D2123 0%, #1B6470 100%);
+opacity: 0.93;
+position: absolute;
+top: 0;
+left: 0;
+height: 100vh;
+width: 100%;
+
+}
+/*about*/
+.about .menuicon.fa-fw .fa-inverse {
+    color: #000 !important;
+}
+
+.a
+
+/*shop*/
+.pods-container {
+    border: none;
+}
+
+/*contact*/
+
+footer {
+    background: #1B6470;
+    margin: 20px 0;
+}
+
+/*media queries*/
