@@ -13,7 +13,7 @@ h1, h2, h3, h4 {
     font-family: $primaryfont !important; 
 }
 
-.about h1, .shop h1, .contact h1 {
+.about h1, .shop h1, .contact h1, .shopsingle h1 {
     margin: -75px auto 20px;
     text-align: center;
 }
@@ -37,20 +37,7 @@ body {
 }
 
 /*main button styles*/
-.home .mainbutton {
-    border: solid 2px white;
-}
 
-.shopsingle .mainbutton {
-    background: $teal;
-    background: -moz-linear-gradient(top, $red 0%, $teal 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$red), color-stop(100%,$teal));
-    background: -webkit-linear-gradient(top, $red 0%,$teal 100%);
-    background: -o-linear-gradient(top, $red 0%,$teal 100%);
-    background: -ms-linear-gradient(top, $red 0%,$teal 100%);
-    background: linear-gradient(to bottom, $red 0%,$teal 100%);
-    
-}
 
 .mainbutton {
     border: none;
@@ -58,6 +45,7 @@ body {
     border-radius: 99px;
     color: white;
     background: none;
+    border: solid 2px white;
     position: relative;
     z-index: 1;
     font-family: $secfont;
@@ -173,7 +161,7 @@ span.menuicon.fa-fw {
 
 .exit-icon {
     margin-right: 9px;
-    border: solid 2px white ;
+    border: solid 2px white;
     border-radius: 50px;
     padding: 0.30rem .70rem;
 }
@@ -205,11 +193,6 @@ span.menuicon.fa-fw {
 .social-menu a {
     color: #000;
     margin: 2.5rem 5rem 0;
-}
-
-/*cart*/
-.cart .fa-inverse {
-    color: black;
 }
 
 /*home*/
@@ -275,7 +258,7 @@ span.menuicon.fa-fw {
     color: #000;
 }
 
-.shop .overlay-content .icons .fa-inverse, .shopsingle .overlay-content .icons .fa-inverse, .cart .overlay-content .icons .fa-inverse {
+.shop .overlay-content .icons .fa-inverse, .shopsingle .overlay-content .icons .fa-inverse {
     color: #fff;
 }
 
@@ -321,21 +304,8 @@ div.singlepod img {
     padding: 20px;
 }
 
-div.singlepod  {
+div.singlepod h1, div.singlepod p {
     text-align:left;
-}
-
-div.singlepod h1 {
-    margin-bottom: 0;
-}
-
-div.singlepod p.price {
-    font-size: 1.5rem;
-    margin:  0 0 20px !important;
-}
-
-div.singlepod p {
-    margin-top: 40px;
 }
 
 /*contact*/

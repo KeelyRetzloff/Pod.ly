@@ -2,7 +2,6 @@
 
 $red: #9B1E1E;
 $teal: #1B6470;
-$darkteal: #0D2123;
 
 $primaryfont: blenny, sans-serif;
 $secfont: mr-eaves-xl-modern, sans-serif;
@@ -13,7 +12,7 @@ h1, h2, h3, h4 {
     font-family: $primaryfont !important; 
 }
 
-.about h1, .shop h1, .contact h1 {
+.about h1, .shop h1, .contact h1, .shopsingle h1 {
     margin: -75px auto 20px;
     text-align: center;
 }
@@ -37,27 +36,13 @@ body {
 }
 
 /*main button styles*/
-.home .mainbutton {
-    border: solid 2px white;
-}
 
-.shopsingle .mainbutton {
-    background: $teal;
-    background: -moz-linear-gradient(top, $red 0%, $teal 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$red), color-stop(100%,$teal));
-    background: -webkit-linear-gradient(top, $red 0%,$teal 100%);
-    background: -o-linear-gradient(top, $red 0%,$teal 100%);
-    background: -ms-linear-gradient(top, $red 0%,$teal 100%);
-    background: linear-gradient(to bottom, $red 0%,$teal 100%);
-    
-}
 
 .mainbutton {
     border: none;
     display: inline-block;
     border-radius: 99px;
     color: white;
-    background: none;
     position: relative;
     z-index: 1;
     font-family: $secfont;
@@ -68,30 +53,30 @@ body {
     letter-spacing: 2px;
   }
   
- .about .mainbutton:before, 
-  .about .mainbutton:after {
+  .mainbutton:before, 
+  .mainbutton:after {
     content: ' ';
     position: absolute;
     border-radius: 99px;
   }
   
- .about .mainbutton:before {
+  .mainbutton:before {
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: -2;
     background: $teal;
-    background: -moz-linear-gradient(left, $darkteal 0%, $teal 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$darkteal), color-stop(100%,$teal));
-    background: -webkit-linear-gradient(left, $darkteal 0%,$teal 100%);
-    background: -o-linear-gradient(left, $darkteal 0%,$teal 100%);
-    background: -ms-linear-gradient(left, $darkteal 0%,$teal 100%);
-    background: linear-gradient(to right, $darkteal 0%,$teal 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$darkteal', endColorstr='teal',GradientType=1 );
+    background: -moz-linear-gradient(left, $teal 0%, #269cc1 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$teal), color-stop(100%,#269cc1));
+    background: -webkit-linear-gradient(left, $teal 0%,#269cc1 100%);
+    background: -o-linear-gradient(left, $teal 0%,#269cc1 100%);
+    background: -ms-linear-gradient(left, $teal 0%,#269cc1 100%);
+    background: linear-gradient(to right, #$teal 0%,#269cc1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$teal', endColorstr='#269cc1',GradientType=1 );
   }
   
- .about .mainbutton:after {
+  .mainbutton:after {
     top: 2px; 
     bottom: 2px;
     left: 2px;
@@ -102,7 +87,7 @@ body {
     transition: all 0.6s ease-in-out;
   }
   
- .about .mainbutton:hover:after {
+  .mainbutton:hover:after {
     opacity: 0;
   }
 
@@ -173,7 +158,7 @@ span.menuicon.fa-fw {
 
 .exit-icon {
     margin-right: 9px;
-    border: solid 2px white ;
+    border: solid 2px white;
     border-radius: 50px;
     padding: 0.30rem .70rem;
 }
@@ -205,11 +190,6 @@ span.menuicon.fa-fw {
 .social-menu a {
     color: #000;
     margin: 2.5rem 5rem 0;
-}
-
-/*cart*/
-.cart .fa-inverse {
-    color: black;
 }
 
 /*home*/
@@ -275,7 +255,7 @@ span.menuicon.fa-fw {
     color: #000;
 }
 
-.shop .overlay-content .icons .fa-inverse, .shopsingle .overlay-content .icons .fa-inverse, .cart .overlay-content .icons .fa-inverse {
+.shop .overlay-content .icons .fa-inverse, .shopsingle .overlay-content .icons .fa-inverse {
     color: #fff;
 }
 
@@ -321,21 +301,8 @@ div.singlepod img {
     padding: 20px;
 }
 
-div.singlepod  {
+div.singlepod h1, div.singlepod p {
     text-align:left;
-}
-
-div.singlepod h1 {
-    margin-bottom: 0;
-}
-
-div.singlepod p.price {
-    font-size: 1.5rem;
-    margin:  0 0 20px !important;
-}
-
-div.singlepod p {
-    margin-top: 40px;
 }
 
 /*contact*/

@@ -13,7 +13,7 @@ h1, h2, h3, h4 {
     font-family: $primaryfont !important; 
 }
 
-.about h1, .shop h1, .contact h1 {
+.about h1, .shop h1, .contact h1, .shopsingle h1 {
     margin: -75px auto 20px;
     text-align: center;
 }
@@ -271,7 +271,7 @@ span.menuicon.fa-fw {
     fill: #000;
     }
 
-.shop .fa-inverse,.shopsingle .fa-inverse {
+.shop .fa-inverse,.shopsingle .fa-inverse,{
     color: #000;
 }
 
@@ -321,21 +321,12 @@ div.singlepod img {
     padding: 20px;
 }
 
-div.singlepod  {
+div.singlepod h1, div.singlepod p {
     text-align:left;
 }
 
-div.singlepod h1 {
-    margin-bottom: 0;
-}
-
-div.singlepod p.price {
-    font-size: 1.5rem;
-    margin:  0 0 20px !important;
-}
-
-div.singlepod p {
-    margin-top: 40px;
+div.signlepod .price {
+    font-size: 3
 }
 
 /*contact*/
