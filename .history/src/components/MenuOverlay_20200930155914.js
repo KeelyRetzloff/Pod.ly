@@ -28,7 +28,7 @@ const MenuOverlay = ({ open, setOpen }) => (
         <FontAwesomeIcon icon="shopping-bag" size="xl" inverse  />
       </span>
       </Link> 
-      <span onClick={() => setOpen(!open)} className="exit-icon" role="button" tabIndex="0" aria-label="Close menu" >
+      <span onClick={() => setOpen(!open)} className="exit-icon" role="button" tab- aria-label="Close menu" >
         <FontAwesomeIcon icon="times" size="xl" inverse />
       </span>
       </div>

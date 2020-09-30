@@ -20,7 +20,7 @@ const Contact = () => (
     
   </Layout>
   <footer>
-    <img src={loop2} className="footerloop" alt="loop text divider" />
+    <img src={loop2} className="footerloop" />
   <div className="footer-container">
 
 <div className="footer-info">
