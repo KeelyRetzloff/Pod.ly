@@ -9,6 +9,7 @@ $secfont: mr-eaves-xl-modern, sans-serif;
 
 /*general styles*/
 
+
 h1, h2, h3, h4 {
     font-family: $primaryfont !important; 
 }
@@ -17,7 +18,6 @@ h1, h2, h3, h4 {
     margin: -75px auto 20px;
     text-align: center;
 }
-
 
 a {
     color: white;
@@ -28,12 +28,13 @@ p, h5, h6 {
 }
 
 body {
-    font-family: none;
+    font-family: $secfont;
 }
 
 
 .home, .about, .shop, .contact, .shopsingle {
     overflow: hidden;
+    min-height:100vh;
 }
 
 /*main button styles*/
@@ -66,6 +67,10 @@ body {
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 2px;
+
+    &:focus {
+        outline-style: none;
+    }
   }
   
  .about .mainbutton:before, 
@@ -108,21 +113,31 @@ body {
 
 /*scrollbar functionality*/
 html {
+    background: $teal;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    overflow-y: scroll;
+    overflow-y: hidden;
     scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
 }
 
-html::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
+
 
 /*header component*/
+header .header-logo {
+    margin: 0 2.2rem;
+}
+
 svg.logosvg {
-fill: white;
 width:40px;
 height: 40px;
+}
+
+svg {
+    fill: white;
 }
 
 header {
@@ -140,7 +155,7 @@ span.menuicon.fa-fw {
 
 /*menu component*/
 .menuOverlay {
-    background:rgba(155, 30, 30, .96);
+    background: $red;
     z-index: 9900;
     position: absolute;
     top:0;
@@ -150,20 +165,23 @@ span.menuicon.fa-fw {
     overflow: hidden;
 }
 
-.menus {
-    margin: -8% auto 0;
+.overlay-content .menus {
     text-align: center !important;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    position:fixed;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
 }
 
 .icons {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 20px 2.0rem 0 0;
+    margin: 20px 2rem 0 0;
     font-size: 1.2rem;
 }
 
@@ -181,13 +199,11 @@ span.menuicon.fa-fw {
 .overlay-menu {
     display:flex;
     flex-wrap: wrap;
-    font-size: 6.5rem;
     font-family: blenny, serif;
 }
 
 .overlay-menu a {
     color: #fff;
-    margin: -1rem 2rem;
     width: 100%;
 }
 
@@ -197,7 +213,6 @@ span.menuicon.fa-fw {
 
 .social-menu {
     display: flex;
-    font-size: 2.5rem;
     font-family: $secfont;
     align-content: center;
 }
@@ -217,6 +232,18 @@ span.menuicon.fa-fw {
     border-color: #fff !important;
 }
 
+.home h1 {
+    font-size: 3.2em;
+}
+
+.home p {
+    margin-left: 7.2rem;
+}
+
+.home .logo-homepage {
+    margin: 1.2rem 0.5rem;
+}
+
 .backgroundimage {
     background-image: url(../images/indexbg.jpg);
     position: absolute;
@@ -226,6 +253,7 @@ span.menuicon.fa-fw {
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .backgroundoverlay {
@@ -236,6 +264,37 @@ span.menuicon.fa-fw {
     left: 0;
     height: 100%;
     width: 100%;
+}
+
+.home .intro-container {
+    z-index: 1000;
+    position:fixed;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.home .earbud-wrapper {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+
+.home .toprightbuds {
+    position: relative;
+    top: 0;
+    left: 75%;
+    margin-top: 0;
+}
+
+.home .bottomleftbuds {
+    position: relative;
+    top: 0;
+    left: 1%;
 }
 
 /*about*/
@@ -266,6 +325,7 @@ span.menuicon.fa-fw {
     align-items: center;
 }
 
+
 /*shop*/
 .shop svg.logosvg, .shopsingle svg.logosvg {
     fill: #000;
@@ -281,11 +341,13 @@ span.menuicon.fa-fw {
 
 .pods-container {
     border: none;
+    overflow-y:scroll;
 }
 
 ul.podslist {
     display: flex;
     list-style-type: none;
+    
 }
 
 li div.podmodule {
@@ -354,11 +416,13 @@ div.singlepod p {
 footer {
     background: $teal;
     color: #000;
-    padding: 20px 0;
-    min-height: 250px;
+    position: fixed;
+    bottom:0;
+    padding: 15px 0;
     width: 100%;
     font-size: 1.2rem;
     font-family: $secfont;
+    text-align: center;
 }
 
 footer .footer-container {
@@ -388,7 +452,8 @@ footer img.footerloop {
 }
 
 footer div.menus {
-    margin:0;
+    margin:0 0 1% 0;
+    position: static;
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
@@ -405,7 +470,6 @@ footer .overlay-menu {
 footer .overlay-menu a {
     font-family: $secfont;
     color: #000;
-    margin: 0 20px !important;
 }
 
 footer .social-menu {
@@ -413,13 +477,229 @@ footer .social-menu {
     margin: 0 .1rem;
 }
 
-footer .social-menu a {
+footer div.menus a {
     margin: 0 20px;
 }
 
-footer .copyright {
-text-align: center;
-margin-top: 1%;
+footer div.copyright {
+    font-size: .9rem;
 }
 
+
 /*media queries*/
+@media only screen and (max-width: 600px) {
+    header .header-logo {
+        margin: 0 1rem;
+        width: 100%;
+    }
+
+    header {
+        background: linear-gradient(to top, transparent 0%,rgba(0,0,0,.4) 100%);
+    }
+
+    span.menuicon.fa-fw {
+        margin: 19px 1.25rem 0 0;
+    }
+
+
+    .home p {
+        line-height: 1rem;
+        font-size: 1.2rem;
+        margin-left: 4rem;
+        margin-top: -4rem;
+    }
+
+    .home h1 {
+        font-size: 2em;
+    }
+
+    .home .logo-homepage {
+        margin: -.7rem 0.5rem;
+    }
+
+    .home .toprightbuds {
+        top: 0;
+        left: 45%;
+        margin-top: -30%;
+    }
+    
+    .home .bottomleftbuds {
+        bottom: 0;
+        right: 0;
+        margin-top: 26%;
+        margin-bottom: -7%;
+    }
+
+  .about .about-text {
+      margin: 1.5rem;
+      text-align: center;
+  }
+
+    .shop ul.podslist {
+        flex-wrap: wrap;
+    }
+
+
+    .icons {
+        margin: 20px .7rem 0 0;
+    }
+
+    .overlay-menu {
+        font-size: 4em;
+    }
+
+    .overlay-menu a{
+        margin: -.5rem 2rem;
+    }
+
+    .social-menu {
+        font-size: 1.5em;
+    }
+
+    .social-menu a {
+        margin: 1rem .5rem;
+    }
+
+    .about-container, .shopsingle .singlepod {
+        flex-wrap: wrap;
+    }
+
+    .about h1, .shop h1, .contact h1 {
+        margin-top: -70px;
+    }
+
+    .contact p {
+        margin: 1rem;
+    }
+
+    .shop, .contact {
+        overflow-y: scroll;
+        height:100%;
+    }
+
+    footer {
+        position: static;
+    }
+
+    footer div.social-menu a {
+        margin: 0 5px;
+    }
+
+    footer .footer-container {
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    
+    footer .footer-container .footer-info, footer .footer-container .menus{
+        width: 100%;
+    }
+
+    footer .footer-container .menus {
+        text-align: left;
+        justify-content: left;
+    }
+
+    footer .footer-container .menus .overlay-menu {
+        text-align: left;
+    }
+
+
+}
+
+@media only screen and (min-width: 600px) {
+    .shop ul.podslist {
+        flex-wrap: nowrap;
+    }
+
+    .overlay-menu {
+        font-size: 5em;
+    }
+
+    .overlay-menu a {
+        margin: -.75rem 2rem;
+    }
+
+    .social-menu {
+        font-size: 2.2em;
+    }
+
+    .social-menu a {
+        margin: .75rem .75rem;
+    }
+
+    .home p {
+        font-size: 1.7rem;
+        margin-left: 5rem;
+        margin-top: -5rem;
+    }
+
+    .about-container, .shopsingle .singlepod {
+        flex-wrap: wrap;
+    }
+
+    .about .about-text, .contact p {
+        margin: 1.5rem;
+    }
+
+    .about h1, .shop h1, .contact h1  {
+        margin-top: -72px;
+    }
+
+    footer .footer-container {
+        flex-wrap: nowrap;
+    }
+
+
+    footer div.social-menu a {
+        margin: 0 15px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .overlay-menu a {
+        margin: -.75rem 2rem;
+    }
+
+    .shop ul.podslist {
+        flex-wrap: nowrap;
+    }
+
+}
+
+
+@media only screen and (min-width: 992px) {
+
+
+    .overlay-menu {
+        font-size: 6.5rem;
+        margin-top: -.5rem;
+    }
+
+    .overlay-menu a {
+        margin: -1rem 2rem;
+    }
+
+    .social-menu {
+        font-size: 2.5rem;
+    }
+
+    .social-menu a {
+        margin: 1rem 3.5rem;
+    }
+
+    .icons {
+        margin: 20px 2rem 0 0;
+    }
+
+    .home p {
+        font-size: 1.9rem;
+        margin-left: 5rem;
+    }
+
+    .about-container {
+        flex-wrap: nowrap;
+    }
+}
+

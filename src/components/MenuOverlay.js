@@ -16,8 +16,9 @@ const MenuOverlay = ({ open, setOpen }) => (
               position: 'relative', 
               top: '30%', 
               left: '74%', 
-              marginTop: '-15%' 
-             }}
+              marginTop: '-15%' }}
+        className="toprightbuds"
+             
 >
       <Image />
   </div>
