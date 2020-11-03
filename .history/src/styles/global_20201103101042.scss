@@ -1,0 +1,683 @@
+@import url("https://use.typekit.net/snz0vyw.css");
+
+$red: #9B1E1E;
+$teal: #1B6470;
+$darkteal: #0D2123;
+
+$primaryfont: blenny, sans-serif;
+$secfont: mr-eaves-xl-modern, sans-serif;
+
+/*general styles*/
+
+
+h1, h2, h3, h4 {
+    font-family: $primaryfont !important; 
+}
+
+.about h1, .shop h1, .contact h1 {
+    margin: -75px auto 20px;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+p, h5, h6 {
+    font-family: $secfont !important; 
+}
+
+body {
+    font-family: $secfont;
+}
+
+
+.home, .about, .shop, .contact, .shopsingle {
+    overflow: hidden;
+}
+
+/*main button styles*/
+.home .mainbutton {
+    border: solid 2px white;
+}
+
+.shopsingle .mainbutton {
+    background: $teal;
+    background: -moz-linear-gradient(top, $red 0%, $teal 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$red), color-stop(100%,$teal));
+    background: -webkit-linear-gradient(top, $red 0%,$teal 100%);
+    background: -o-linear-gradient(top, $red 0%,$teal 100%);
+    background: -ms-linear-gradient(top, $red 0%,$teal 100%);
+    background: linear-gradient(to bottom, $red 0%,$teal 100%);
+    
+}
+
+.mainbutton {
+    border: none;
+    display: inline-block;
+    border-radius: 99px;
+    color: white;
+    background: none;
+    position: relative;
+    z-index: 1;
+    font-family: $secfont;
+    font-size: 1.5rem;
+    padding: .5rem 5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &:focus {
+        outline-style: none;
+    }
+  }
+  
+ .about .mainbutton:before, 
+  .about .mainbutton:after {
+    content: ' ';
+    position: absolute;
+    border-radius: 99px;
+  }
+  
+ .about .mainbutton:before {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+    background: $teal;
+    background: -moz-linear-gradient(left, $darkteal 0%, $teal 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$darkteal), color-stop(100%,$teal));
+    background: -webkit-linear-gradient(left, $darkteal 0%,$teal 100%);
+    background: -o-linear-gradient(left, $darkteal 0%,$teal 100%);
+    background: -ms-linear-gradient(left, $darkteal 0%,$teal 100%);
+    background: linear-gradient(to right, $darkteal 0%,$teal 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$darkteal', endColorstr='teal',GradientType=1 );
+  }
+  
+ .about .mainbutton:after {
+    top: 2px; 
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    background-color: black;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.6s ease-in-out;
+  }
+  
+ .about .mainbutton:hover:after {
+    opacity: 0;
+  }
+
+/*scrollbar functionality*/
+html {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
+}
+
+
+body.noscroll {
+ overflow: hidden;   
+}
+
+
+/*header component*/
+header .header-logo {
+    margin: 0 2.2rem;
+}
+
+svg.logosvg {
+width:40px;
+height: 40px;
+}
+
+svg {
+    fill: white;
+}
+
+header {
+    display: flex;
+    align-content: middle;
+}
+
+span.menuicon.fa-fw {
+    position: absolute;
+    right:0;
+    top: 0;
+    margin: 19px 2.5rem 0 0;
+    font-size: 1.4rem;
+}
+
+/*menu component*/
+.menuOverlay {
+    background:rgba(155, 30, 30, .96);
+    z-index: 9900;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.overlay-content .menus {
+    text-align: center !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position:fixed;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px 2rem 0 0;
+    font-size: 1.2rem;
+}
+
+.cart-icon {
+    margin: 0 15px;
+}
+
+.exit-icon {
+    margin-right: 9px;
+    border: solid 2px white ;
+    border-radius: 50px;
+    padding: 0.30rem .70rem;
+}
+
+.overlay-menu {
+    display:flex;
+    flex-wrap: wrap;
+    font-family: blenny, serif;
+}
+
+.overlay-menu a {
+    color: #fff;
+    width: 100%;
+}
+
+.menus a:hover {
+    color: #000;
+}
+
+.social-menu {
+    display: flex;
+    font-family: $secfont;
+    align-content: center;
+}
+
+.social-menu a {
+    color: #000;
+    margin: 2.5rem 5rem 0;
+}
+
+/*cart*/
+.cart .fa-inverse {
+    color: black;
+}
+
+/*home*/
+.home .menuicon.fa-fw{
+    border-color: #fff !important;
+}
+
+.home h1 {
+    font-size: 3.2em;
+}
+
+.home p {
+    margin-left: 7.2rem;
+}
+
+.home .logo-homepage {
+    margin: 1.2rem 0.5rem;
+}
+
+.backgroundimage {
+    background-image: url(../images/indexbg.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.backgroundoverlay {
+    background: linear-gradient(130deg, #0D2123 0%, #1B6470 100%);
+    opacity: 0.93;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.home .intro-container {
+    z-index: 1000;
+    position:fixed;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.home .earbud-wrapper {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+
+.home .toprightbuds {
+    position: relative;
+    top: 0;
+    left: 75%;
+    margin-top: 0;
+}
+
+.home .bottomleftbuds {
+    position: relative;
+    top: 0;
+    left: 1%;
+}
+
+/*about*/
+.about svg.logosvg {
+    fill: $teal;
+    }
+.about .menuicon.fa-fw .fa-inverse {
+    color: $teal !important;
+}
+
+.about .menuicon.fa-fw {
+    border-color: $teal !important;
+}
+
+.about h1 {
+    color: $teal!important;
+}
+
+.about {
+    color: #fff;
+    background-color: #000;
+}
+
+.about-container {
+    display: flex;
+    width: 100%;
+    justify-self: middle;
+    align-items: center;
+}
+
+/*shop*/
+.shop svg.logosvg, .shopsingle svg.logosvg {
+    fill: #000;
+    }
+
+.shop .fa-inverse,.shopsingle .fa-inverse {
+    color: #000;
+}
+
+.shop .overlay-content .icons .fa-inverse, .shopsingle .overlay-content .icons .fa-inverse, .cart .overlay-content .icons .fa-inverse {
+    color: #fff;
+}
+
+.pods-container {
+    border: none;
+}
+
+ul.podslist {
+    display: flex;
+    list-style-type: none;
+    
+}
+
+li div.podmodule {
+    border: dashed 4px;
+    border-radius: 30px;
+    margin: 15px;
+    padding: 10px;
+}
+
+ 
+ul.podslist li a {
+    color: #000 !important;
+    text-decoration: none !important;
+}
+
+ul.podslist li a:hover .podmodule {
+    border-style: solid;
+}
+
+/*single product */
+div.singlepod {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    border: dashed 4px;
+    border-radius: 40px;
+    height: 85vh;
+}
+
+div.singlepod img {
+    max-width: 650px;
+    padding: 20px;
+}
+
+div.singlepod  {
+    text-align:left;
+}
+
+div.singlepod h1 {
+    margin-bottom: 0;
+}
+
+div.singlepod p.price {
+    font-size: 1.5rem;
+    margin:  0 0 20px !important;
+}
+
+div.singlepod p {
+    margin-top: 40px;
+}
+
+/*contact*/
+.contact {
+    background: transparent linear-gradient(129deg, #300C0C 0%, #0E3238 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color:#fff;
+    overflow: visible;
+}
+
+.contact p {
+    margin: 5% 0;
+}
+
+
+footer {
+    background: $teal;
+    color: #000;
+    padding: 20px 0;
+    min-height: 250px;
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: $secfont;
+    text-align: center;
+}
+
+footer .footer-container {
+    display: flex;
+    padding: 0 5%;
+}
+
+.footer-info {
+    margin: 0 20px;
+    width: 50%;
+}
+
+.footer-contact, .footer-address {
+    margin: 4% 0;
+    width: 100%;
+}
+
+.footer-contact span, .footer-address span, .footer-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer img.footerloop {
+    margin: -100px auto;
+    width: 100%;
+    
+}
+
+footer div.menus {
+    margin:0 0 1% 0;
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    text-align: right !important;
+    width: 50%;
+}
+
+footer .overlay-menu {
+    margin: 20px 0;
+    font-size: 1.3rem;
+    width: 100%;
+}
+
+footer .overlay-menu a {
+    font-family: $secfont;
+    color: #000;
+}
+
+footer .social-menu {
+    font-size: 1.3rem;
+    margin: 0 .1rem;
+}
+
+footer div.menus a {
+    margin: 0 20px;
+}
+
+footer div.copyright {
+    font-size: .9rem;
+}
+
+
+/*media queries*/
+@media only screen and (max-width: 600px) {
+    header .header-logo {
+        margin: 0 1rem;
+        width: 100%;
+    }
+
+    header {
+        background: linear-gradient(to top, transparent 0%,rgba(0,0,0,.4) 100%);
+    }
+
+    span.menuicon.fa-fw {
+        margin: 19px 1.25rem 0 0;
+    }
+
+
+    .home p {
+        line-height: 1rem;
+        font-size: 1.2rem;
+        margin-left: 4rem;
+        margin-top: -4rem;
+    }
+
+    .home h1 {
+        font-size: 2em;
+    }
+
+    .home .logo-homepage {
+        margin: -.7rem 0.5rem;
+    }
+
+    .home .toprightbuds {
+        top: 0;
+        left: 45%;
+        margin-top: -30%;
+    }
+    
+    .home .bottomleftbuds {
+        bottom: 0;
+        right: 0;
+        margin-top: 26%;
+        margin-bottom: -7%;
+    }
+
+  .about .about-text {
+      margin: 1.5rem;
+      text-align: center;
+  }
+
+    .shop ul.podslist {
+        flex-wrap: wrap;
+    }
+
+
+    .icons {
+        margin: 20px .7rem 0 0;
+    }
+
+    .overlay-menu {
+        font-size: 4em;
+    }
+
+    .overlay-menu a{
+        margin: -.5rem 2rem;
+    }
+
+    .social-menu {
+        font-size: 1.5em;
+    }
+
+    .social-menu a {
+        margin: 1rem .5rem;
+    }
+
+    .about-container, .shopsingle .singlepod {
+        flex-wrap: wrap;
+    }
+
+    .about h1, .shop h1, .contact h1 {
+        margin-top: -70px;
+    }
+
+
+    footer div.social-menu a {
+        margin: 0 5px;
+    }
+
+    footer .footer-container {
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+
+
+}
+
+@media only screen and (min-width: 600px) {
+    .shop ul.podslist {
+        flex-wrap: nowrap;
+    }
+
+    .overlay-menu {
+        font-size: 5em;
+    }
+
+    .overlay-menu a {
+        margin: -.75rem 2rem;
+    }
+
+    .social-menu {
+        font-size: 2.2em;
+    }
+
+    .social-menu a {
+        margin: .75rem .75rem;
+    }
+
+    .home p {
+        font-size: 1.7rem;
+        margin-left: 5rem;
+        margin-top: -5rem;
+    }
+
+    .about-container, .shopsingle .singlepod {
+        flex-wrap: wrap;
+    }
+
+    .about .about-text, .contact p {
+        margin: 1.5rem;
+    }
+
+    .about h1, .shop h1, .contact h1  {
+        margin-top: -72px;
+    }
+
+    footer .footer-container {
+        flex-wrap: nowrap;
+    }
+
+    footer .footer-container .footer-info  {
+        width: 100%;
+    }
+
+
+    footer div.social-menu a {
+        margin: 0 15px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .overlay-menu a {
+        margin: -.75rem 2rem;
+    }
+
+    .shop ul.podslist {
+        flex-wrap: nowrap;
+    }
+
+}
+
+
+@media only screen and (min-width: 992px) {
+
+
+    .overlay-menu {
+        font-size: 6.5rem;
+        margin-top: -.5rem;
+    }
+
+    .overlay-menu a {
+        margin: -1rem 2rem;
+    }
+
+    .social-menu {
+        font-size: 2.5rem;
+    }
+
+    .social-menu a {
+        margin: 1rem 3.5rem;
+    }
+
+    .icons {
+        margin: 20px 2rem 0 0;
+    }
+
+    .home p {
+        font-size: 1.9rem;
+        margin-left: 5rem;
+    }
+
+    .about-container {
+        flex-wrap: nowrap;
+    }
+}
+
