@@ -22,14 +22,13 @@ const IndexPage = () => (
       <Podlylogo className="logo-homepage" />
       od.ly
     </h1>
-    <p style={{lineHeight: '3rem'}}>The lightest your ears felt</p>
-    <Mainbutton CTA={<span>about ></span>} link={'/about'}/>
+    <p style={{lineHeight: '3rem', textStyle: 'italic'}}>The lightest your ears felt</p>
+    <Mainbutton CTA={<span>about </span>} link={'/about'}/>
     
     </div>
 
     </Layout>
 
-    
     <div className="earbud-wrapper">
     <div style={{transform: 'rotate(0.5turn)',  
                  maxWidth: '400px', 
