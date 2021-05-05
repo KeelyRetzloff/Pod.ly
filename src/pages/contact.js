@@ -11,15 +11,24 @@ const Contact = () => (
   <div className="contact">
   <Layout>
     <SEO title="Contact" />
-
     <h1>Contact Us</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    <p class="quote">Every Moment is a Fresh Beginning.</p>
 
+    <form method="POST">
+      <label for="formname">Name</label>
+        <input type="text" name="formname" id="formname"  />
+      <label for="formemail">Email</label>
+        <input type="text" name="formemail" id="formemail"  />
+      <label for="formmessage">Message</label>
+        <textarea name="formmessage" id="formmessage"></textarea>
+      <button type="submit" value="submit">Submit</button>
+    </form>
   </Layout>
+
   <footer>
+    <figure>
     <img src={loop2} className="footerloop" alt="loop text divider" />
+    </figure>
   <div className="footer-container">
 
 <div className="footer-info">
@@ -41,7 +50,7 @@ const Contact = () => (
 
   <div className="copyright">Copyright 2020 Keely Retzloff</div>
   </footer>
-  </div>
+</div>
 )
 
 export default Contact

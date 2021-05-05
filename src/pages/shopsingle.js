@@ -13,12 +13,15 @@ const Shopsingle = () => (
     <SEO title="Shop" />
 
     <div className="singlepod">
+    <div class="singlepod-image-container">
     <img src={Podsgrey} alt="pods" className="singlepod-image"/>
-    <div>
-    <h1>Pod Name</h1>
+    </div>
+    <div class="singlepod-content">
+    <h1>lite.weight in color</h1>
     <p className="price">40$</p>
     <Mainbutton CTA={'Add to Cart'} link={'/cart'}/>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
     </div>
     </div>
     

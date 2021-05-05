@@ -40,6 +40,11 @@ body {
 /*main button styles*/
 .home .mainbutton {
     border: solid 2px white;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
 }
 
 .shopsingle .mainbutton {
@@ -50,7 +55,8 @@ body {
     background: -o-linear-gradient(top, $red 0%,$teal 100%);
     background: -ms-linear-gradient(top, $red 0%,$teal 100%);
     background: linear-gradient(to bottom, $red 0%,$teal 100%);
-    
+    font-size: 1.2rem;
+    padding: .5rem 4rem;
 }
 
 .mainbutton {
@@ -62,15 +68,17 @@ body {
     position: relative;
     z-index: 1;
     font-family: $secfont;
-    font-size: 1.5rem;
-    padding: .5rem 5rem;
+    font-size: 1.2rem;
+    padding: .4rem 3rem;
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 2px;
+    transition: all 1s ease;
 
     &:focus {
         outline-style: none;
     }
+
   }
   
  .about .mainbutton:before, 
@@ -115,7 +123,7 @@ body {
 html {
     background: $teal;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    overflow-y: hidden;
+    overflow-y: auton;
     scrollbar-width: none; /* Firefox */
 
     &::-webkit-scrollbar {
@@ -123,8 +131,6 @@ html {
         background: transparent; /* make scrollbar transparent */
     }
 }
-
-
 
 /*header component*/
 header .header-logo {
@@ -245,15 +251,13 @@ span.menuicon.fa-fw {
 }
 
 .backgroundimage {
-    background-image: url(../images/indexbg.jpg);
+    background: #1B6470 url(../images/video1.gif) no-repeat center;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
 }
 
 .backgroundoverlay {
@@ -321,7 +325,7 @@ span.menuicon.fa-fw {
 .about-container {
     display: flex;
     width: 100%;
-    justify-self: middle;
+    height: 100%;
     align-items: center;
 }
 
@@ -341,13 +345,11 @@ span.menuicon.fa-fw {
 
 .pods-container {
     border: none;
-    overflow-y:scroll;
 }
 
 ul.podslist {
     display: flex;
     list-style-type: none;
-    
 }
 
 li div.podmodule {
@@ -368,6 +370,8 @@ ul.podslist li a:hover .podmodule {
 }
 
 /*single product */
+
+
 div.singlepod {
     display: flex;
     justify-content: left;
@@ -378,9 +382,33 @@ div.singlepod {
     height: 85vh;
 }
 
+div.singlepod div.singlepod-image-container {
+    display: block;
+    height: 100%;
+}
+
+div.singlepod .singlepod-content {
+    padding: 0 20px;
+}
+
 div.singlepod img {
     max-width: 650px;
     padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+div.singlepod div.singlepod-image-container::after {
+    content: "";
+    background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff);
+    z-index: 3;
+    position: relative;
+    display: inline-block;
+    bottom: calc(100% + 30px);
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
 }
 
 div.singlepod  {
@@ -412,16 +440,48 @@ div.singlepod p {
     margin: 5% 0;
 }
 
+.contact p.quote {
+    margin: 6% auto 0;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 100;
+}
+
+.contact form {
+    width: 60%;
+    margin: 20px auto 40px;
+}
+
+.contact form label {
+    margin: 10px 10px 5px;
+}
+
+.contact form input, .contact form textarea {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.contact form button {
+    border-radius: 20px;
+    border: 2px solid #1b6470;
+    background: none;
+    padding: 8px 30px;
+    margin: 15px 0;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 1.3em;
+    transition: all .4s;
+}
 
 footer {
     background: $teal;
     color: #000;
-    position: fixed;
-    bottom:0;
     padding: 15px 0;
     width: 100%;
     font-size: 1.2rem;
-    font-family: $secfont;
+    font-family: mr-eaves-xl-modern,sans-serif;
     text-align: center;
 }
 
@@ -446,9 +506,8 @@ footer .footer-container {
 }
 
 footer img.footerloop {
-    margin: -100px auto;
-    width: 100%;
-    
+    margin: -58px auto -120px;
+    width: 70%;
 }
 
 footer div.menus {
@@ -573,7 +632,6 @@ footer div.copyright {
     }
 
     .shop, .contact {
-        overflow-y: scroll;
         height:100%;
     }
 
@@ -634,8 +692,13 @@ footer div.copyright {
         margin-top: -5rem;
     }
 
-    .about-container, .shopsingle .singlepod {
+     .shopsingle .singlepod {
         flex-wrap: wrap;
+        margin: 0 45px;
+    }
+
+    .about-container {
+        flex-wrap: wrap-reverse;
     }
 
     .about .about-text, .contact p {
@@ -670,8 +733,6 @@ footer div.copyright {
 
 
 @media only screen and (min-width: 992px) {
-
-
     .overlay-menu {
         font-size: 6.5rem;
         margin-top: -.5rem;
@@ -700,6 +761,10 @@ footer div.copyright {
 
     .about-container {
         flex-wrap: nowrap;
+    }
+
+    .about-container .about-img-container, .about-container .about-text, div.singlepod div.singlepod-content, div.singlepod div.singlepod-image-container {
+        width: 50%;
     }
 }
 

@@ -7,7 +7,7 @@ const MenuItems = () => {
     <div className="menus">
         <div className="overlay-menu">
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <Link to="/about">Collections</Link>
         <Link to="/shop/">Shop</Link>
         <Link to="/contact/">Contact</Link>
         </div>

@@ -22,8 +22,8 @@ const IndexPage = () => (
       <Podlylogo className="logo-homepage" />
       od.ly
     </h1>
-    <p style={{lineHeight: '3rem', textStyle: 'italic'}}>The lightest your ears felt</p>
-    <Mainbutton CTA={<span>about </span>} link={'/about'}/>
+    <p style={{lineHeight: '3rem', fontWeight: '300', fontSize: '.7em', textTransform: 'Uppercase'}}>The lightest your ears ever felt</p>
+    <Mainbutton CTA={<span>See Collections</span>} link={'/about'}/>
     
     </div>
 
